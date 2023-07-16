@@ -19,11 +19,11 @@
 <img width="552" alt="스크린샷 2023-07-16 오후 8 55 24" src="https://github.com/whddbsl/Algorithm-js/assets/130979302/69804d37-1726-4c2c-8f6d-6fb78920163c">
 
 3. 로그인 성공 시 다음 페이지로 이동합니다.
-   <img width="504" alt="스크린샷 2023-07-16 오후 8 56 36" src="https://github.com/whddbsl/Algorithm-js/assets/130979302/0cea4361-f4b7-44fd-9eb7-a78c838e1cbb">
+<img width="504" alt="스크린샷 2023-07-16 오후 8 56 36" src="https://github.com/whddbsl/Algorithm-js/assets/130979302/0cea4361-f4b7-44fd-9eb7-a78c838e1cbb">
 
 4. 유효성 검사는 통과했지만 이메일(아이디)와 비밀번호가 일치하지 않을 경우 경고창을 출력합니다.
-   <img width="446" alt="스크린샷 2023-07-16 오후 8 57 40" src="https://github.com/whddbsl/Algorithm-js/assets/130979302/3438fee8-d3aa-412b-8e6f-7ff880f99c69">
-   <img width="444" alt="스크린샷 2023-07-16 오후 8 57 59" src="https://github.com/whddbsl/Algorithm-js/assets/130979302/e36a8358-678c-4eb1-a8ff-474186e37033">
+<img width="446" alt="스크린샷 2023-07-16 오후 8 57 40" src="https://github.com/whddbsl/Algorithm-js/assets/130979302/3438fee8-d3aa-412b-8e6f-7ff880f99c69">
+<img width="444" alt="스크린샷 2023-07-16 오후 8 57 59" src="https://github.com/whddbsl/Algorithm-js/assets/130979302/e36a8358-678c-4eb1-a8ff-474186e37033">
 
 5. ```js
    checkUserEnter = (event) => {
