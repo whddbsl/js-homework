@@ -20,66 +20,52 @@ let inputPw = "";
 let emailValid = false;
 let pwValid = false;
 
-function getLoginInput() {
+checkEmail = () => {
   inputEmail = email.value;
-  inputPw = pw.value;
-}
-
-function checkEmail() {
   emailValid = emailReg(inputEmail);
 
-  if (!emailValid) {
-    email.classList.add("is--invalid");
-  } else {
+  if (emailValid || inputEmail === "") {
     email.classList.remove("is--invalid");
-  }
-
-  if (inputEmail !== user.id) {
-    alert("아이디가 잘못 되었습니다");
-  }
-}
-
-// function checkPw() {
-//   pwValid = pwReg(inputPw);
-
-//   if (!pwValid) {
-//     pw.classList.add("is--invalid");
-//   } else {
-//     pw.classList.remove("is--invalid");
-//   }
-
-//   if (inputPw !== user.pw) {
-//     alert("비밀번호가 잘못 되었습니다.");
-//   }
-// }
-
-const checkPw = () => {
-  const pwValid = pwReg(inputPw);
-
-  if (!pwValid) {
-    pw.classList.add("is--invalid");
   } else {
-    pw.classList.remove("is--invalid");
-  }
-
-  if (inputPw !== user.pw) {
-    alert("비밀번호가 잘못 되었습니다.");
+    email.classList.add("is--invalid");
   }
 };
 
-function checkValid() {
-  getLoginInput();
-  checkEmail();
-  checkPw();
+checkPw = () => {
+  inputPw = pw.value;
+  pwValid = pwReg(inputPw);
 
+  if (pwValid || inputPw === "") {
+    pw.classList.remove("is--invalid");
+  } else {
+    pw.classList.add("is--invalid");
+  }
+};
+
+checkUser = () => {
   if (inputEmail === user.id && inputPw === user.pw) {
     window.location.href = "welcome.html";
   }
 
+  if (inputEmail !== user.id) {
+    alert("아이디(이메일)가 잘못 되었습니다.");
+  } else if (inputPw !== user.pw) {
+    alert("비밀번호가 잘못 되었습니다.");
+  }
   event.preventDefault();
+
 }
 
-loginButton.addEventListener("click", checkValid);
+checkUserEnter = (event) => {
+  if(event.keyCode === 13){
+    checkUser()
+  }
+}
+
+email.addEventListener("input", checkEmail);
+pw.addEventListener("input", checkPw);
+loginButton.addEventListener("click", checkUser);
+loginButton.addEventListener("keypress",checkUserEnter)
 
 // 정규식
 function emailReg(text) {
@@ -90,6 +76,6 @@ function emailReg(text) {
 }
 
 function pwReg(text) {
-  const re = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{6,16}$/;
+  const re = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^*+=-]).{10,16}$/;
   return re.test(String(text).toLowerCase());
 }
