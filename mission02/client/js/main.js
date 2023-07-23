@@ -57,3 +57,5 @@ function handlePoster(e) {
   const nav = getNode(".nav");
   nav.addEventListener("click", handlePoster);
 })();
+
+
